@@ -2,20 +2,20 @@ library(tidyverse)
 library(reshape2)
 library(dplyr)
 
-# Read data from file
+# Read data from the file
 data <- read.csv("C:/Users/chikazhet/gudgeontai.csv")
 
 #Inspect the data
 #Inspect the data
 str(data)
-# filtering data based on season
+# Filtering data based on season
 temp1 <- filter(data, season == "2021-22")
 
 temp2 <- filter(data, season == "2020-21")
 
 temp3 <- filter(data,season == "2019-20" )
 
-# Filtering based on profit above or below median 2021/22 season
+# Filtering based on profit above or below the median 2021/22 season
 LowOP <- filter(temp1, Operating_profit_ha <= median(temp1$Operating_profit_ha))
 HighOP <- filter(temp1, Operating_profit_ha > median(temp1$Operating_profit_ha))
 
@@ -27,7 +27,7 @@ LowOP %>% mutate(Profitability = "B"))
 #Selecting the variables we need
 ding2 <- select(ding,season,Farm,Operating_profit_ha,Farm_working_expenses_per_kgMS,MS_per_ha,methane,total_feed_eaten_tha,pasture_and_crop_eaten_per_ha,N_surplus,N_fertiliser_per_ha,imported_supplements_eaten_tha, Profitability, milking_interval)
 
-# Presenting the data into a long format
+# Presenting the data in a long format
 molten.data <- melt(ding2, id = c("Profitability","milking_interval", "season","Farm"))
 
 
