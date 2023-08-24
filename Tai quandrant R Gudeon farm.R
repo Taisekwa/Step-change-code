@@ -31,6 +31,8 @@ ggplot(data2, aes(N_surplus,Operating_profit_ha, label=Farm)) +
   
   geom_point(size=1.5, color="red") +
   
+  theme_gray() +
+  
   geom_hline(yintercept=median(data$Operating_profit_ha),
                                                 
  col="blue") + geom_vline(xintercept=median(data$N_surplus), 
@@ -67,6 +69,8 @@ ggplot(data2, aes(N_surplus,Operating_profit_ha, label=Farm)) +
 ggplot(data2, aes(methane,Operating_profit_ha,label=Farm)) +
   
   geom_point(size=1.5, col="red") +
+  
+  theme_gray() +
   
   geom_hline(yintercept=median(data$Operating_profit_ha), col="blue") + 
   
@@ -122,6 +126,8 @@ ggplot(data3, aes(N_surplus,Operating_profit_ha, label=Farm)) +
   
   geom_point(size=1.5, color="red") +
   
+  theme_gray() +
+  
   geom_hline(yintercept=median(data3$Operating_profit_ha),
              
              col="blue") + geom_vline(xintercept=median(data3$N_surplus), 
@@ -158,6 +164,8 @@ ggplot(data3, aes(N_surplus,Operating_profit_ha, label=Farm)) +
 ggplot(data3, aes(methane,Operating_profit_ha,label=Farm)) +
   
   geom_point(size=1.5, col="red") +
+  
+  theme_gray() +
   
   geom_hline(yintercept=median(data3$Operating_profit_ha), col="blue") + 
   
@@ -213,6 +221,8 @@ ggplot(data4, aes(N_surplus,Operating_profit_ha,label=Farm)) +
   
   geom_point(size=1.5, color="red") +
   
+  theme_gray() +
+  
   geom_hline(yintercept=median(data4$Operating_profit_ha),
              
              col="blue") + geom_vline(xintercept=median(data4$N_surplus), 
@@ -249,6 +259,8 @@ ggplot(data4, aes(N_surplus,Operating_profit_ha,label=Farm)) +
 ggplot(data4, aes(methane,Operating_profit_ha, label=Farm)) +
   
   geom_point(size=1.5, col="red") +
+  
+  theme_gray() +
   
   geom_hline(yintercept=median(data4$Operating_profit_ha), col="blue") + 
   
