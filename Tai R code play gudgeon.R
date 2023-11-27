@@ -2,20 +2,32 @@ library(tidyverse)
 library(reshape2)
 library(dplyr)
 
+<<<<<<< HEAD
 # Read data from file
+=======
+# Read data from the file
+>>>>>>> 42a4bcd35b9ecad055e3c3520d251f5ede8e55c7
 data <- read.csv("C:/Users/chikazhet/gudgeontai.csv")
 
 #Inspect the data
 #Inspect the data
 str(data)
+<<<<<<< HEAD
 # filtering data based on season
+=======
+# Filtering data based on season
+>>>>>>> 42a4bcd35b9ecad055e3c3520d251f5ede8e55c7
 temp1 <- filter(data, season == "2021-22")
 
 temp2 <- filter(data, season == "2020-21")
 
 temp3 <- filter(data,season == "2019-20" )
 
+<<<<<<< HEAD
 # Filtering based on profit above or below median 2021/22 season
+=======
+# Filtering based on profit above or below the median 2021/22 season
+>>>>>>> 42a4bcd35b9ecad055e3c3520d251f5ede8e55c7
 LowOP <- filter(temp1, Operating_profit_ha <= median(temp1$Operating_profit_ha))
 HighOP <- filter(temp1, Operating_profit_ha > median(temp1$Operating_profit_ha))
 
@@ -27,7 +39,11 @@ LowOP %>% mutate(Profitability = "B"))
 #Selecting the variables we need
 ding2 <- select(ding,season,Farm,Operating_profit_ha,Farm_working_expenses_per_kgMS,MS_per_ha,methane,total_feed_eaten_tha,pasture_and_crop_eaten_per_ha,N_surplus,N_fertiliser_per_ha,imported_supplements_eaten_tha, Profitability, milking_interval)
 
+<<<<<<< HEAD
 # Presenting the data into a long format
+=======
+# Presenting the data in a long format
+>>>>>>> 42a4bcd35b9ecad055e3c3520d251f5ede8e55c7
 molten.data <- melt(ding2, id = c("Profitability","milking_interval", "season","Farm"))
 
 
@@ -38,7 +54,11 @@ p2 <- ggplot(molten.data, aes(x=Profitability, y = value, fill=Profitability, la
   geom_boxplot() +
   theme_gray() +
   #geom_jitter() +
+<<<<<<< HEAD
   geom_text(aes(label=ifelse(Farm=="GF",as.character(Farm),'')),hjust=0,vjust=0,fontface="bold", size=3) +
+=======
+  geom_text(aes(label=ifelse(Farm=="GF",as.character(Farm),'')),hjust=0,vjust=0,fontface="bold", size=3, color="blue") +
+>>>>>>> 42a4bcd35b9ecad055e3c3520d251f5ede8e55c7
   theme(legend.position = "none")+
   facet_wrap(~variable,scales = "free",labeller = as_labeller(
     c(Operating_profit_ha = "Operating profit $/ha", Farm_working_expenses_per_kgMS = "Farm working expenses $/kgMS",MS_per_ha ="Milksolids kg/ha", methane ="Methane t CO2 equiv/ha",total_feed_eaten_tha = "Total feed eaten t DM/ha",pasture_and_crop_eaten_per_ha="Pasture and crop eaten t DM/ha", N_surplus="N surplus kg N/ha",N_fertiliser_per_ha = "N fertiliser kg N/ha", imported_supplements_eaten_tha = "Imported supplements eaten t DM/ha" ))) +
@@ -73,7 +93,11 @@ p3 <- ggplot(molten.data1, aes(x=Profitability, y = value, fill=Profitability, l
   geom_boxplot() +
   theme_gray() +
   #geom_jitter() +
+<<<<<<< HEAD
   geom_text(aes(label=ifelse(Farm=="GF",as.character(Farm),'')),hjust=0,vjust=0,fontface="bold", size=3) +
+=======
+  geom_text(aes(label=ifelse(Farm=="GF",as.character(Farm),'')),hjust=0,vjust=0,fontface="bold", size=3,color="blue") +
+>>>>>>> 42a4bcd35b9ecad055e3c3520d251f5ede8e55c7
   theme(legend.position = "none")+
   facet_wrap(~variable,scales = "free",labeller = as_labeller(
     c(Operating_profit_ha = "Operating profit $/ha", Farm_working_expenses_per_kgMS = "Farm working expenses $/kgMS",MS_per_ha ="Milksolids kg/ha", methane ="Methane t CO2 equiv/ha",total_feed_eaten_tha = "Total feed eaten t DM/ha",pasture_and_crop_eaten_per_ha="Pasture and crop eaten t DM/ha", N_surplus="N surplus kg N/ha",N_fertiliser_per_ha = "N fertiliser kg N/ha", imported_supplements_eaten_tha = "Imported supplements eaten t DM/ha" ))) +
@@ -85,7 +109,11 @@ p3 <- ggplot(molten.data1, aes(x=Profitability, y = value, fill=Profitability, l
 p3
 
 
+<<<<<<< HEAD
 # Filtering based on profit above or below median 2019/20 season
+=======
+# Filtering based on profit above or below the median 2019/20 season
+>>>>>>> 42a4bcd35b9ecad055e3c3520d251f5ede8e55c7
 LowOP2 <- filter(temp3, Operating_profit_ha <= median(temp3$Operating_profit_ha))
 HighOP2 <- filter(temp3, Operating_profit_ha > median(temp3$Operating_profit_ha))
 
@@ -97,7 +125,11 @@ fing <-  rbind(HighOP2 %>% mutate(Profitability = "A"),
 fing1 <- select(fing,season,Farm,Operating_profit_ha,Farm_working_expenses_per_kgMS,MS_per_ha,methane,total_feed_eaten_tha,pasture_and_crop_eaten_per_ha,N_surplus,N_fertiliser_per_ha,imported_supplements_eaten_tha, Profitability, milking_interval)
 
 
+<<<<<<< HEAD
 # Presenting the data into a long format
+=======
+# Presenting the data in a long format
+>>>>>>> 42a4bcd35b9ecad055e3c3520d251f5ede8e55c7
 molten.data2 <- melt(fing1, id = c("Profitability","milking_interval", "season","Farm"))
 
 # Plotting data on multiple-variables 2019-20
@@ -105,7 +137,11 @@ p4 <- ggplot(molten.data2, aes(x=Profitability, y = value, fill=Profitability, l
   geom_boxplot() +
   theme_gray() +
   #geom_jitter() +
+<<<<<<< HEAD
   geom_text(aes(label=ifelse(Farm=="GF",as.character(Farm),'')),hjust=0,vjust=0,fontface="bold", size=3) +
+=======
+  geom_text(aes(label=ifelse(Farm=="GF",as.character(Farm),'')),hjust=0,vjust=0,fontface="bold", size=3, color="blue") +
+>>>>>>> 42a4bcd35b9ecad055e3c3520d251f5ede8e55c7
   theme(legend.position = "none")+
   facet_wrap(~variable,scales = "free",labeller = as_labeller(
     c(Operating_profit_ha = "Operating profit $/ha", Farm_working_expenses_per_kgMS = "Farm working expenses $/kgMS",MS_per_ha ="Milksolids kg/ha", methane ="Methane t CO2 equiv/ha",total_feed_eaten_tha = "Total feed eaten t DM/ha",pasture_and_crop_eaten_per_ha="Pasture and crop eaten t DM/ha", N_surplus="N surplus kg N/ha",N_fertiliser_per_ha = "N fertiliser kg N/ha", imported_supplements_eaten_tha = "Imported supplements eaten t DM/ha" ))) +
