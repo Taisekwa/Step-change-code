@@ -217,7 +217,7 @@ ggplot(data3, aes(N_surplus,Operating_profit_ha, label=Farm)) +
   
   geom_point(size=1.5, color="red") +
   
-  geom_hline(yintercept=median(data$Operating_profit_ha),
+  geom_hline(yintercept=median(data3$Operating_profit_ha),
              
              col="blue") + geom_vline(xintercept=median(data$N_surplus), 
                                       
@@ -252,17 +252,17 @@ ggplot(data3, aes(methane,Operating_profit_ha,label=Farm)) +
   
   geom_point(size=1.5, col="red") +
   
-  geom_hline(yintercept=median(data$Operating_profit_ha), col="blue") + 
+  geom_hline(yintercept=median(data3$Operating_profit_ha), col="blue") + 
   
   geom_vline(xintercept=median(data$methane), col="blue")+
   
-  annotate("text", x = 5, y = 7500, label = "A", col = "blue", size = 10) +
+  annotate("text", x = 6, y = 7500, label = "A", col = "blue", size = 10) +
   
-  annotate("text", x = 12.5, y = 7500, label = "B", col = "blue", size = 10)+
+  annotate("text", x = 15, y = 7500, label = "B", col = "blue", size = 10)+
   
-  annotate("text", x = 5, y = 1250, label = "C", col = "blue", size = 10) +
+  annotate("text", x = 6, y = 1250, label = "C", col = "blue", size = 10) +
   
-  annotate("text", x = 12.5, y = 1250, label = "D", col = "blue", size = 10) +
+  annotate("text", x = 15, y = 1250, label = "D", col = "blue", size = 10) +
   
   #annotate("text", x = 8.8, y = 4512, label = "Gudgeon", col = "black", size = 4, fontface="bold") +
   
